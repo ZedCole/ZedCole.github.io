@@ -1,0 +1,18 @@
+<section>
+    <h1>{{ .Title }}</h1>    
+    <div class="header-item">
+        <img src="/profile-img.jpg" width="200" alt="A photo of Zed">
+    </div>
+    <div class="header-item">
+        <p>{{ .Content }}</p> 
+    </div> 
+    <div class="header-item">
+        <ul>
+            {{ range $item := .Site.Params.socialLinks }}
+            <li>
+                <a href="{{ $item.url }}" aria-label="{{ $item.title }}" title="{{ $item.title }}">{{ $item.title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>

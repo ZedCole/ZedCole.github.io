@@ -1,0 +1,7 @@
+<h3>Recent Posts</h3>
+{{- range ( where site.RegularPages "Section" "posts" | first 4) }}
+<article>
+    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    <p>{{ .Summary }}</p>
+</article>
+{{- end }}
