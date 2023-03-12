@@ -3,10 +3,19 @@ languageCode = 'en-au'
 title = 'Zed Cole'
 theme = 'zedcole'
 
-sectionPagesMenu = 'main'
+[menu]
+[[menu.main]]
+    pageRef = "/"
+    name = 'Home'
+    url = '/'
+    weight = 10
+[[menu.main]]
+    pageRef = "posts"
+    name = 'Posts'
+    url = '/posts'
+    weight = 20
 
 [params]
-
 [[params.socialLinks]]
 title = "Github"
 url = "https://github.com/zedcole"
