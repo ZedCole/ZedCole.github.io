@@ -1,0 +1,42 @@
+{{ define "main" }}
+    <header>
+        <h1>{{ .Title }}</h1>    
+        <section>
+            <div class="header-item">
+                <img src="/profile-img.jpg" width="200" alt="A photo of Zed">
+            </div>
+            <div class="header-item">
+                <p>{{ .Content }}</p> 
+            </div> 
+            <div class="header-item">
+                <ul>
+                    {{ range $item := .Site.Params.socialLinks }}
+                    <li>
+                        <a href="{{ $item.url }}" aria-label="{{ $item.title }}" title="{{ $item.title }}">{{ $item.title }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+        <nav>
+            <ul>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Interested? Have a look at my...</h2>
+        <section id='posts'>
+            <h3>Recent Posts</h3>
+            {{- range ( where site.RegularPages "Section" "posts" | first 4) }}
+            <article>
+                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                <p>{{ .Summary }}</p>
+            </article>
+            {{- end }}
+        </section>
+    </main>
+{{ end }}
