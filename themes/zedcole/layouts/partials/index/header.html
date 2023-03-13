@@ -10,7 +10,7 @@
         <ul>
             {{ range $item := .Site.Params.socialLinks }}
             <li>
-                <a href="{{ $item.url }}" aria-label="{{ $item.title }}" title="{{ $item.title }}">{{ $item.title }}</a>
+                <a href="{{ $item.url }}" aria-label="{{ $item.title }}" title="{{ $item.title }}"><i class="{{ $item.icon}}" aria-hidden="true"></i></a>
             </li>
             {{ end }}
         </ul>
