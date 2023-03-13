@@ -17,9 +17,18 @@ theme = 'zedcole'
 
 [params]
 [[params.socialLinks]]
+icon = "fa-brands fa-github"
 title = "Github"
 url = "https://github.com/zedcole"
-
 [[params.socialLinks]]
+icon = "fa-solid fa-envelope"
 title = "Email"
 url = "mailto:zed@zedcole.com"
+[[params.socialLinks]]
+icon = "fa-brands fa-youtube"
+title = "YouTube"
+url = "https://www.youtube.com/channel/UCKEnqsx9EpPHqVWndkPc-2g"
+[[params.socialLinks]]
+icon = "fa-brands fa-twitch"
+title = "Twitch.tv"
+url = "https://www.twitch.tv/zedcoledev"
