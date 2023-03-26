@@ -1,26 +1,28 @@
 <footer>
-    <div id="site-links">
-        <h4>Site Pages</h4>
-        <ul>
-        {{range .Site.Menus.main}}
-        <li>
-        <a href="{{.URL}}" title="{{.Title}}">{{.Name}}</a>
-        </li>
-        {{end}}
-        </ul>
-    </div>
-    <div id="site-taxonomies">
-        <h4>Post Types</h4>
-        <ul>
-        {{range $taxonomy, $terms := .Site.Taxonomies}}
-        <li>
-            {{with site.GetPage $taxonomy}}
-            <a href="{{"/" | relLangURL}}{{$taxonomy | urlize}}" title="{{$taxonomy}}">{{strings.FirstUpper $taxonomy}}</a>
+    <section id="sitemap">
+        <div id="site-links">
+            <h4>Site Pages</h4>
+            <ul>
+            {{range .Site.Menus.main}}
+            <li>
+            <a href="{{.URL}}" title="{{.Title}}">{{.Name}}</a>
+            </li>
             {{end}}
-        </li>
-        {{end}}
-        </ul>
-    </div>
+            </ul>
+        </div>
+        <div id="site-taxonomies">
+            <h4>Post Types</h4>
+            <ul>
+            {{range $taxonomy, $terms := .Site.Taxonomies}}
+            <li>
+                {{with site.GetPage $taxonomy}}
+                <a href="{{"/" | relLangURL}}{{$taxonomy | urlize}}" title="{{$taxonomy}}">{{strings.FirstUpper $taxonomy}}</a>
+                {{end}}
+            </li>
+            {{end}}
+            </ul>
+        </div>
+    </section>
     <div id="site-info">
         {{$time := time (int .Params.addDate)}}
         <h4><a href="{{.Site.BaseURL}}" title="zedcole.com Home Page">zedcole.com</a></h4>
