@@ -1,0 +1,8 @@
+<div id="series-container">
+{{with .GetTerms "series"}}
+    {{range .}}
+    A post in the <strong><a href="{{.Permalink}}">{{.Params.title}}</a></strong> series:<br>
+    {{.Params.description}}
+    {{end}}
+{{end}}
+</div>

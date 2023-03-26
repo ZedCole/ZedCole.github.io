@@ -2,6 +2,9 @@
 {{partial "header.html" .}}
 <section>
     <h1>{{.Title}}</h1>
+    {{if .Param "series"}}
+        {{partial "posts/series.html" .}}
+    {{end}}
     <article>
     {{.Content}}    
     </article>
