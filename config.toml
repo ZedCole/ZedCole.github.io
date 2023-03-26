@@ -37,3 +37,8 @@ url = "https://www.youtube.com/channel/UCKEnqsx9EpPHqVWndkPc-2g"
 icon = "fa-brands fa-twitch"
 title = "Twitch.tv"
 url = "https://www.twitch.tv/zedcoledev"
+
+[module]
+[[module.mounts]]
+    source = "themes/*/assets"
+    target = "assets"
