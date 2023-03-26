@@ -1,7 +1,23 @@
 <h3>Recent Posts</h3>
 {{- range ( where site.RegularPages "Section" "posts" | first 4) }}
 <article>
-    <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+    {{$seriesName := ""}}
+    {{$seriesUrl := ""}}
+    {{$seriesTitle := ""}}
+    {{if .Param "series"}}
+        {{with .GetTerms "series"}}
+            {{range .}}
+                {{$seriesName = .Params.title}}
+                {{$seriesUrl = .Permalink}}
+                {{$seriesTitle = printf "%s: " $seriesName}}
+            {{end}}
+        {{end}}
+    {{end}}
+    <h4><a href="{{.Permalink}}">
+            {{$seriesTitle}}{{ .Title }}</a></h4>
+    {{if .Param "series"}}
+    <h6>See More: <a href="{{$seriesUrl}}">{{$seriesName}}</a></h6>
+    {{end}}
     <p>{{ .Summary }}</p>
 </article>
 {{- end }}
